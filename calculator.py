@@ -1,5 +1,5 @@
-import math
 import time
+import math
 #addition function
 def add(x, y):
     return x + y
@@ -75,13 +75,15 @@ def name():
         return "Tangent"
 #Prints the operations list for reference
 def desc():
-        print ("Select Operation: \n 1. Add \n 2. Subtract \n 3. Divide \n 4. Multiply \n 5. Squareroot")
-        print(" 6. Square \n 7. Exponential Function(power) ")
-        print(' 8. Compare two numbers(comp or compare) \n 9. Factorial of a number(factorial or fact)') 
-        print(' 10. Greatest common Divisor of two numbers (gcd)')
-        print(" 11. Sine of a number(sin or sine) \n 12. Cosine of a number(cos or cosine")
-        print(' 13. Tangent of a number(tan or tangent) \n 01. View the list \n 02. Simple Calculator)')
-        print(' 03. Complicated ver. of the simple calculator \n 0. Exit')
+        print("+----------------------------------------------------------------------------------------+")
+        print(" Select Operation: \n 1. Add \n 2. Subtract \n 3. Divide \n 4. Multiply \n 5. Squareroot")
+        print(" 6. Square \n 7. Exponential Function(power)                                            ")
+        print(' 8. Compare two numbers(comp or compare) \n 9. Factorial of a number(factorial or fact) ') 
+        print(' 10. Greatest common Divisor of two numbers (gcd)                                       ')
+        print(" 11. Sine of a number(sin or sine) \n 12. Cosine of a number(cos or cosine              ")
+        print(' 13. Tangent of a number(tan or tangent) \n 01. View the list \n 02. Simple Calculator) ')
+        print(' 03. Complicated ver. of the simple calculator \n 0. Exit                               ')
+        print("+-----------------------------------------------------------------------------------------+")
 def diffcal():
     from collections import liops
 
@@ -173,12 +175,14 @@ def diffcal():
         print(calc(input("Input? ")))
 def simpcal():
      while True:
-        print('\nEnter "0" or "back" to go back to the main Calculator')
+        print('\n Enter "0" or "back" to go back to the main Calculator')
         calc = input("Type calculation: ")
         if calc == 'back' or calc == '0':
             break
-        else:
+        elif not calc.isalpha():
             print("Answer: " + str(eval(calc)) + "\n")
+        else:
+            print("Invalid input, Enter a vallid expression like(1+2*(5+6)/5), or back to go back to the main calculator")
     
             
      #not so simple calculator#
@@ -187,7 +191,7 @@ def simpcal():
 desc()
 while True:
         print("\n")
-        print('To view the operations list enter: "01", "name", "function"')
+        print('To view the operations list enter: "01", "name", "functions"')
         use = input("Enter your choice(the number or the name of the function): ")
         if use.isalpha():
             use = use.lower()
@@ -262,4 +266,4 @@ while True:
        
             
         else:
-            print ("Invalid Input, choose a Number from the list above")
+            print ("Invalid Input, choose a Number from the list, to view the list Enter '01' or 'name' or 'function's")
